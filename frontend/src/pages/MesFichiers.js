@@ -10,13 +10,13 @@ const MesFichiers = () => {
     const[reponse,setReponse] = useState();
 
     function recevoirDonnees(){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }
         })
         .then((response)=>{
-            axios.get("https://musicoll.com/backend/public/api/mesfichiers/"+response.data, {
+            axios.get("https://pautube.com/backend/public/api/mesfichiers/"+response.data, {
                 headers: {
                     'Authorization': "Bearer "+cookies.token
                   }
@@ -40,13 +40,13 @@ const MesFichiers = () => {
     }
 
     function suppressionDonnees(id){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }
         })
         .then((response)=>{
-            axios.post("https://musicoll.com/backend/public/api/destroy/"+id, creationDonneesSuppression(response.data), {
+            axios.post("https://pautube.com/backend/public/api/destroy/"+id, creationDonneesSuppression(response.data), {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     'Authorization': "Bearer "+cookies.token
@@ -54,7 +54,7 @@ const MesFichiers = () => {
             })
             .then(function (result) {
                 setReponse(<p className="messageValidation">Suppression fichier reussi</p>);
-                document.location.href='https://musicoll.com/MesFichiers';
+                document.location.href='https://pautube.com/MesFichiers';
             })
             .catch(function (error) {
                 setReponse(<p className="messageErreur">Echec suppression Fichier</p>);

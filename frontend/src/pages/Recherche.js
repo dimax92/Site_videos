@@ -6,7 +6,7 @@ const Recherche = () => {
     const[data, setData] = useState([]);
 
     function recevoirDonnees(){
-        axios.get("https://musicoll.com/backend/public/api/fichiers")
+        axios.get("https://pautube.com/backend/public/api/fichiers")
         .then((result)=>{
             setData(result.data);
         })
@@ -25,7 +25,7 @@ const Recherche = () => {
     };
 
     function rechercheDonnees(recherche){
-        axios.post("https://musicoll.com/backend/public/api/search/-"+recherche)
+        axios.post("https://pautube.com/backend/public/api/search/-"+recherche)
         .then((result)=>{
             setData(result.data);
         })

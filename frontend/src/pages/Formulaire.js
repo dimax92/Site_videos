@@ -51,13 +51,13 @@ const Formulaire = () => {
     }
 
     function envoiDonnees(){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }
         })
           .then(function (response) {
-            axios.post("https://musicoll.com/backend/public/api/creationfichiers/"+response.data, creationDonneesFichier(response.data), {
+            axios.post("https://pautube.com/backend/public/api/creationfichiers/"+response.data, creationDonneesFichier(response.data), {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     'Authorization': "Bearer "+cookies.token

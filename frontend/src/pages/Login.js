@@ -19,11 +19,11 @@ const Login = () => {
     }
 
     function envoiDonnees(){
-        axios.post("https://musicoll.com/backend/public/api/login", creationDonnees())
+        axios.post("https://pautube.com/backend/public/api/login", creationDonnees())
           .then(function (response) {
               setCookie('token', response.data.access_token,[]);
               setReponse(<p className="messageValidation">{response.data.message}</p>);
-              document.location.href='https://musicoll.com/';
+              document.location.href='https://pautube.com/';
           })
           .catch(function (error) {
             setReponse(<p className="messageErreur">{error.response.data.message}</p>)

@@ -11,7 +11,7 @@ const Contenu = () => {
     let { id } = useParams();
 
     function recevoirDonnees(id){
-        axios.get("https://musicoll.com/backend/public/api/fichiers/"+id)
+        axios.get("https://pautube.com/backend/public/api/fichiers/"+id)
         .then((result)=>{
             setNomFichier(result.data.nomfichier);
             setNom(result.data.nom);
@@ -79,7 +79,7 @@ const Contenu = () => {
             <Navigation/>
             <h1>{nom}</h1>
             <div class='divVideo'>
-                <video id='imageproduit' src={"https://musicoll.com/backend/storage/app/fichiers/"+nomFichier} onTimeUpdate={(e)=>{
+                <video id='imageproduit' src={"https://pautube.com/backend/storage/app/fichiers/"+nomFichier} onTimeUpdate={(e)=>{
                     let inputRange=document.querySelector(".inputRange");
                     let bouton=document.querySelector(".boutonPlay");  
                     let temps=document.querySelector(".temps"); 
@@ -141,7 +141,7 @@ const Contenu = () => {
             <h2>Description</h2>
             <p>{description}</p>
             <button onClick={()=>{
-                document.location.href="https://musicoll.com/backend/public/api/download/"+id;
+                document.location.href="https://pautube.com/backend/public/api/download/"+id;
             }}>Telecharger</button>
         </div>
     )

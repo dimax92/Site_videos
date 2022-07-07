@@ -7,7 +7,7 @@ const Navigation=()=>{
     const[reponse, setReponse] = useState();
 
     function deconnexion(){
-        axios.post("https://musicoll.com/backend/public/api/logout",{
+        axios.post("https://pautube.com/backend/public/api/logout",{
             data: {
                 nom: "popo"
             }}, {
@@ -17,7 +17,7 @@ const Navigation=()=>{
         })
           .then(function (response) {
               setReponse(<p className="messageValidation">Deconnexion reussi</p>);
-              document.location.href='https://musicoll.com/';
+              document.location.href='https://pautube.com/';
           })
           .catch(function (error) {
             setReponse(<p className="messageErreur">Echec deconnexion</p>)
@@ -39,7 +39,7 @@ const Navigation=()=>{
     );
 
     function testConnexion(){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }

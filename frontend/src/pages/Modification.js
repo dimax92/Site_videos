@@ -19,7 +19,7 @@ const Modification = () => {
     let { id } = useParams();
 
     function recevoirDonnees(id){
-        axios.get("https://musicoll.com/backend/public/api/fichiers/"+id)
+        axios.get("https://pautube.com/backend/public/api/fichiers/"+id)
         .then((result)=>{
             setNom(result.data.nom);
             setDescription(result.data.description);
@@ -72,13 +72,13 @@ const Modification = () => {
     }
 
     function envoiDonneesModification(id){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }
         })
         .then(function (response) {
-            axios.post("https://musicoll.com/backend/public/api/update/"+id, creationDonnees(response.data), {
+            axios.post("https://pautube.com/backend/public/api/update/"+id, creationDonnees(response.data), {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     'Authorization': "Bearer "+cookies.token

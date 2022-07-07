@@ -48,11 +48,11 @@ const Inscription = () => {
     }
 
     function envoiDonnees(){
-        axios.post("https://musicoll.com/backend/public/api/register", creationDonnees())
+        axios.post("https://pautube.com/backend/public/api/register", creationDonnees())
           .then(function (response) {
               setCookie('token', response.data.access_token,[]);
               messageValidation();
-              document.location.href='https://musicoll.com/';
+              document.location.href='https://pautube.com/';
           })
           .catch(function (error) {
             messageErreur(error);

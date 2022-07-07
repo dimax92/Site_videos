@@ -21,13 +21,13 @@ const Profil = () => {
     }
 
     function suppressionProfil(){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }
         })
         .then((result)=>{
-            axios.post("https://musicoll.com/backend/public/api/suppressionprofil/"+result.data, {
+            axios.post("https://pautube.com/backend/public/api/suppressionprofil/"+result.data, {
                 data: {
                     popo: "salut"
                 }
@@ -38,7 +38,7 @@ const Profil = () => {
             })
               .then(function (response) {
                 setReponse(<p className="messageValidation">Desinscription reussi</p>);
-                document.location.href='https://musicoll.com/';
+                document.location.href='https://pautube.com/';
               })
               .catch(function (error) {
                 setReponse(<p className="messageErreur">Echec desinscription</p>)
@@ -49,7 +49,7 @@ const Profil = () => {
 
 
     function deconnexion(){
-        axios.post("https://musicoll.com/backend/public/api/logout",{
+        axios.post("https://pautube.com/backend/public/api/logout",{
             data: {
                 nom: "popo"
             }}, {
@@ -88,13 +88,13 @@ const Profil = () => {
     }
 
     function envoiDonneesModification(nomClass, nom){
-        axios.get("https://musicoll.com/backend/public/api/profile", {
+        axios.get("https://pautube.com/backend/public/api/profile", {
             headers: {
                 'Authorization': "Bearer "+cookies.token
               }
         })
         .then((response)=>{
-            axios.post("https://musicoll.com/backend/public/api/updateprofil/"+response.data, modificationDonnees(nomClass, nom), {
+            axios.post("https://pautube.com/backend/public/api/updateprofil/"+response.data, modificationDonnees(nomClass, nom), {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     'Authorization': "Bearer "+cookies.token
