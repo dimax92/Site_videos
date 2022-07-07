@@ -1,0 +1,50 @@
+.divFormulaire, .divModification {
+    form {
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .labelFichier {
+            text-decoration: underline;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .fichier {
+            display: none;
+        }
+        .nom {
+            height: 20px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: solid 0.1px #00000047;
+            margin: 10px 0px;
+        }
+        .description {
+            height: 200px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: solid 0.1px rgba(0, 0, 0, 0.2784313725);
+            margin: 10px 0px;
+            resize: none;
+        }
+        button {
+            width: 80%;
+            border: none;
+            background: coral;
+            color: white;
+            font-weight: bold;
+            font-size: 100%;
+            cursor: pointer;
+            max-width: 300px;
+            height: 30px;
+            border-radius: 10px;
+            margin: 10px 0px;
+        }
+    }
+}
