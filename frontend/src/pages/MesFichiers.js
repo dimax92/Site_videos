@@ -70,6 +70,7 @@ const MesFichiers = () => {
             {data.map((resultat)=>{
                 return(
                     <div className="fichier">
+                        <video id='imageproduit' src={"https://pautube.com/backend/storage/app/fichiers/"+resultat.nomfichier}></video>
                         <p>{resultat.nom}</p>
                         <div className="supprimerModifier">
                         <a href={"Modification/"+resultat.id}>

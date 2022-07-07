@@ -48,6 +48,7 @@ const Recherche = () => {
                 {data.map((resultat)=>{
                     return(
                         <a href={remplacementEspacesTirets(resultat.nom)+"-"+resultat.id}>
+                            <video id='imageproduit' src={"https://pautube.com/backend/storage/app/fichiers/"+resultat.nomfichier}></video>
                             <p>{resultat.nom}</p>
                         </a>
                     )
